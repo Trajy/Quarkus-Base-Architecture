@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"br.com.trajy.architecture.base","l":"AbstractPanacheAssembly"},{"p":"br.com.trajy.architecture.base","l":"AbstractPanacheController"},{"p":"br.com.trajy.architecture.base","l":"AbstractPanacheService"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"}];updateSearchResults();
