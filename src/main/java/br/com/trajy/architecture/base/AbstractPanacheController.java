@@ -81,7 +81,7 @@ public abstract class AbstractPanacheController<D, E extends PanacheEntity, S ex
     @Transactional
     public Response update(@PathParam("id") Long id, D d) {
         this.beforeUpdate(id, d);
-        service.update(id, assembly.fillToAttachedEntity(service.findById(id), assembly.assembly(d)));
+        service.update(id, assembly.assemblyUpdate(service.findById(id), assembly.assembly(d)));
         this.afterUpdate();
         return noContent().build();
     }
@@ -104,8 +104,8 @@ public abstract class AbstractPanacheController<D, E extends PanacheEntity, S ex
     }
 
     /**
-     * @author Trajy
      * Override this method to handle request before find
+     * @author Trajy
      */
     protected void beforeFind() { }
 

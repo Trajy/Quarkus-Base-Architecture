@@ -27,12 +27,22 @@ public abstract class AbstractPanacheAssembly<D, E extends PanacheEntity> {
     public abstract D assembly(E e);
 
     /**
-     * Copy id from another entity
+     * Use strategy design pattern to fill entity attached with new data
+     * @param attached object attached in database
+     * @param detached object detached with new data to persist
+     * @return Entity attached into database
+     */
+    public E assemblyUpdate(E attached, E detached) {
+        this.fillToAttachedEntity(attached, detached);
+        return attached;
+    }
+
+    /**
+     * Override this method to copy new data from UPDATE request to attached on database object entity
      * @author Trajy
      * @param attached Entity atteched that will receive new Data
      * @param detached Entity detached that contains new data
-     * @return Same ateched object in e param filled with new data from detached object
      */
-    public abstract E fillToAttachedEntity(E attached, E detached);
+    public abstract void fillToAttachedEntity(E attached, E detached);
 
 }
