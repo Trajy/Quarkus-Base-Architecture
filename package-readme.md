@@ -1,24 +1,38 @@
+# How to install
+
+## Maven
+
+Add your git credentials to `%USER_HOME/.m2/settings.xml` maven file configuration. Replace `${GIT_USERNAME}` with your git username and `${GIT_TOKEN}` with your personal access token.
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <!-->...Other settings<-->
+
+    <servers>
+        <server>
+            <id>github</id>
+            <username>${GIT_USERNAME}</username>
+            <password>${GIT_TOKEN}</password>
+        </server>
+    </servers>
+
+<settings>
+```
+
+> **Note**: See [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to overview about token generarion.
+
+Add following into your project `pom.xml`.
+
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>br.com.trajy</groupId>
-    <artifactId>quarkus-base-architecture</artifactId>
-    <version>1.0.0</version>
-
-    <developers>
-        <developer>
-            <id>Trajy</id>
-            <name>Henrique Trajano</name>
-            <email>henrique.trajano.a@gmail.com</email>
-            <roles>
-                <role>Lead</role>
-            </roles>
-            <timezone>-3</timezone>
-        </developer>
-    </developers>
+    <!-->...Other Project Tags<-->
 
     <properties>
         <compiler-plugin.version>3.13.0</compiler-plugin.version>
@@ -46,61 +60,20 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-arc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-rest</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-rest-jaxb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-orm-panache</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
-        </dependency>
-        <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>3.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-config-yaml</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-jdbc-postgresql</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-rest-jackson</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-orm-panache</artifactId>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.16.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>4.4</version>
+            <groupId>br.com.trajy</groupId>
+            <artifactId>quarkus-base-architecture</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub Trajy Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Trajy/Quarkus-Base-Architecture/</url>
+        </repository>
+    </repositories>
+    
     <build>
         <plugins>
             <plugin>
@@ -158,27 +131,15 @@
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <id>native</id>
-            <activation>
-                <property>
-                    <name>native</name>
-                </property>
-            </activation>
-            <properties>
-                <skipITs>false</skipITs>
-                <quarkus.native.enabled>true</quarkus.native.enabled>
-            </properties>
-        </profile>
-    </profiles>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Trajy Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Trajy/Quarkus-Base-Architecture/</url>
-        </repository>
-    </distributionManagement>
-
 </project>
+```
+
+And the run
+
+```bash
+mvn install
+```
+Or
+```bash
+./mvnw install
+```
