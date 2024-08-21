@@ -9,9 +9,8 @@
 name: Maven Central Deploy
 
 on:
-  on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build:
