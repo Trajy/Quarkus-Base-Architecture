@@ -6,7 +6,7 @@
 
     <groupId>br.com.trajy</groupId>
     <artifactId>quarkus-base-architecture</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <developers>
         <developer>
@@ -172,5 +172,13 @@
             </properties>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Trajy Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Trajy/Quarkus-Base-Architecture/</url>
+        </repository>
+    </distributionManagement>
 
 </project>
