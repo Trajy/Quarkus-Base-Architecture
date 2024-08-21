@@ -9,10 +9,9 @@
 name: Maven Central Deploy
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  on:
+  release:
+    types: [created]
 
 jobs:
   build:
