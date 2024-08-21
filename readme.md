@@ -1,10 +1,10 @@
 # Quarkus Base Architecture
-[![Github Packages](https://img.shields.io/badge/Github%20Packages%20-%20green)](https://github.com/Trajy/Quarkus-Base-Architecture/packages/2232881)
+[![Maven Package](https://github.com/Trajy/Quarkus-Base-Architecture/actions/workflows/maven-publish.yml/badge.svg?event=release)](https://github.com/Trajy/Quarkus-Base-Architecture/actions/workflows/maven-publish.yml)
 [![Javadoc](https://camo.githubusercontent.com/a499b156975bcb01dbf3881f6157b247f5a4670d78d16755504531e2128dd604/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a617661446f632d4f6e6c696e652d677265656e)](https://trajy.github.io/Quarkus-Base-Architecture/br/com/trajy/architecture/base/package-summary.html)
 [![Licence MIT](https://camo.githubusercontent.com/a4426cbe5c21edb002526331c7a8fbfa089e84a550567b02a0d829a98b136ad0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667)](https://opensource.org/licenses/MIT)
 
 
-This project contains boilerplate code to turn simple quarkus rest-api development. Uses the [Strategy Design Pattern](https://refactoring.guru/pt-br/design-patterns/strategy) and [Template Method Design Pattern](https://refactoring.guru/pt-br/design-patterns/template-method) to define different behaviors for each application domain.
+This project contains boilerplate code to turn simple quarkus rest-api development. Uses the [Strategy Design Pattern](https://refactoring.guru/pt-br/design-patterns/strategy) and [Template Method Design Pattern](https://refactoring.guru/pt-br/design-patterns/template-method) to define different behaviors for each application domain. See [How to install](./package-readme.md) guide to add the project maven dependency.
 
 ## Summary
 - [Quarkus Base Architecture](#quarkus-base-architecture)
