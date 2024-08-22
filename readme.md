@@ -5,7 +5,10 @@
 [![Licence MIT](https://camo.githubusercontent.com/a4426cbe5c21edb002526331c7a8fbfa089e84a550567b02a0d829a98b136ad0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667)](https://opensource.org/licenses/MIT)
 
 
-This project contains boilerplate code to turn simple quarkus rest-api development. Uses the [Strategy Design Pattern](https://refactoring.guru/pt-br/design-patterns/strategy) and [Template Method Design Pattern](https://refactoring.guru/pt-br/design-patterns/template-method) to define different behaviors for each application domain. See [How to install](./package-readme.md) guide to add the project maven dependency.
+This project contains boilerplate code to turn simple quarkus rest-api development. Uses the [Strategy Design Pattern](https://refactoring.guru/pt-br/design-patterns/strategy) and [Template Method Design Pattern](https://refactoring.guru/pt-br/design-patterns/template-method) to define different behaviors for each application domain. 
+
+>[!NOTE]
+>See [How to install](./package-readme.md) guide to add the project maven dependency from github packages.
 
 ## Summary
 - [Quarkus Base Architecture](#quarkus-base-architecture)
